@@ -9,5 +9,6 @@ node_modules/
 /allure-results/
 /allure-report/
 exmple.spec.ts
-/storeageStates/*.json
+/storageState/*.json
 register.spec.ts
+.DS_Store
