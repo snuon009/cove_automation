@@ -1,1 +1,1 @@
-{"uid":"83edc06c07f9ae9e47eb6dd1b683e4e2","name":"packages","children":[]}
+{"uid":"83edc06c07f9ae9e47eb6dd1b683e4e2","name":"packages","children":[{"name":"auth.login.spec.ts","children":[{"name":"User can log in with valid credentials","uid":"2a50269ddae58bcd","parentUid":"07ae179a8aa779c3ba82b9a0574b7e7a","status":"passed","time":{"start":1760887636119,"stop":1760887652583,"duration":16464},"flaky":false,"newFailed":false,"newPassed":false,"newBroken":false,"retriesCount":0,"retriesStatusChange":false,"parameters":["public"],"tags":[]}],"uid":"auth.login.spec.ts"}]}
