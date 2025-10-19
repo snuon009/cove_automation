@@ -11,31 +11,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 🧭 1. Checkout repo
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # ⚙️ 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 📦 3. Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 🧱 4. Install Playwright browsers
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      # 🧪 5. Run Playwright tests (headed mode, with Allure reporter)
       - name: Run Playwright tests with Allure
         run: |
           xvfb-run --auto-servernum --server-args='-screen 0 1920x1080x24' \
           npm run test:auth -- --headed
 
-      # 🔍 6. Debug — check if results folder exists
+      - name: Install Allure Commandline
+        run: npm install -g allure-commandline --save-dev
+
       - name: Check test-results folder
         run: |
           if [ -d test-results ]; then
@@ -45,28 +42,24 @@ jobs:
             echo "⚠️ test-results folder not found!"
           fi
 
-      # 📊 7. Generate Allure Report
       - name: Generate Allure Report
-        run: npm run allure:generate
+        run: allure generate test-results --clean -o allure-report
 
-      # 📤 8. Upload Allure Report as artifact
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: allure-report
-          if-no-files-found: warn  # Prevent workflow failure if empty
+          if-no-files-found: warn
 
-      # 🧷 9. Upload Playwright test results (screenshots, videos, raw allure)
       - name: Upload Playwright Artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: test-results/
-          if-no-files-found: warn  # Avoids "No files found" error
+          if-no-files-found: warn
 
-      # 🌐 10. Deploy Allure Report to GitHub Pages (optional)
       - name: Deploy Allure Report to GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
