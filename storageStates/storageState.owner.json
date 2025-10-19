@@ -1,0 +1,45 @@
+{
+  "cookies": [
+    {
+      "name": "__Host-next-auth.csrf-token",
+      "value": "fa723a1417d20c8efc5f18037349fd3f00b5e51f50982d614d8708843b8f1314%7C4431721b55eff485e88369c250a2a3ba80b992d56adc942cbb1d43feece7a602",
+      "domain": "cove-passes.vercel.app",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__Secure-next-auth.callback-url",
+      "value": "https%3A%2F%2Fcove-passes.vercel.app",
+      "domain": "cove-passes.vercel.app",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "token",
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjksImlhdCI6MTc2MDg2NjgwMSwiZXhwIjoxNzYzNDU4ODAxfQ.HQPjuWd2nCbMDPRkQXw6Ot0nsudgbRBoBw81ntezDO8",
+      "domain": "cove-passes.vercel.app",
+      "path": "/",
+      "expires": 1763545201.829788,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://cove-passes.vercel.app",
+      "localStorage": [
+        {
+          "name": "nextauth.message",
+          "value": "{\"event\":\"session\",\"data\":{\"trigger\":\"getSession\"},\"timestamp\":1760866800}"
+        }
+      ]
+    }
+  ]
+}

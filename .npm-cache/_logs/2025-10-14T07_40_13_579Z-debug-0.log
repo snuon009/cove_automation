@@ -1,0 +1,67 @@
+0 verbose cli /Users/misssaki/.nvm/versions/node/v22.17.0/bin/node /Users/misssaki/.nvm/versions/node/v22.17.0/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.17.0
+3 silly config load:file:/Users/misssaki/.nvm/versions/node/v22.17.0/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/misssaki/Documents/projects/playwrights/cove_tests/.npmrc
+5 silly config load:file:/Users/misssaki/.npmrc
+6 silly config load:file:/Users/misssaki/.nvm/versions/node/v22.17.0/etc/npmrc
+7 verbose title npm exec playwright@latest init --force --quiet --template=ts
+8 verbose argv "exec" "--yes" "--" "playwright@latest" "init" "--force" "--quiet" "--template=ts"
+9 verbose logfile logs-max:10 dir:/Users/misssaki/Documents/projects/playwrights/cove_tests/.npm-cache/_logs/2025-10-14T07_40_13_579Z-
+10 verbose logfile /Users/misssaki/Documents/projects/playwrights/cove_tests/.npm-cache/_logs/2025-10-14T07_40_13_579Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 http fetch GET 200 https://registry.npmjs.org/npm 328ms
+14 http fetch GET 200 https://registry.npmjs.org/playwright 1718ms (cache miss)
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+17 silly idealTree buildDeps
+18 silly fetch manifest playwright@1.56.0
+19 silly packumentCache full:https://registry.npmjs.org/playwright cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/playwright 2017ms (cache miss)
+21 silly packumentCache full:https://registry.npmjs.org/playwright set size:undefined disposed:false
+22 silly placeDep ROOT playwright@1.56.0 OK for:  want: 1.56.0
+23 silly fetch manifest playwright-core@1.56.0
+24 silly packumentCache full:https://registry.npmjs.org/playwright-core cache-miss
+25 silly fetch manifest fsevents@2.3.2
+26 silly packumentCache full:https://registry.npmjs.org/fsevents cache-miss
+27 http fetch GET 200 https://registry.npmjs.org/fsevents 84ms (cache miss)
+28 silly packumentCache full:https://registry.npmjs.org/fsevents set size:undefined disposed:false
+29 http fetch GET 200 https://registry.npmjs.org/playwright-core 3162ms (cache miss)
+30 silly packumentCache full:https://registry.npmjs.org/playwright-core set size:undefined disposed:false
+31 silly placeDep ROOT fsevents@2.3.2 OK for: playwright@1.56.0 want: 2.3.2
+32 silly placeDep ROOT playwright-core@1.56.0 OK for: playwright@1.56.0 want: 1.56.0
+33 silly reify moves {}
+34 silly audit bulk request {
+34 silly audit   playwright: [ '1.56.0' ],
+34 silly audit   fsevents: [ '2.3.2' ],
+34 silly audit   'playwright-core': [ '1.56.0' ]
+34 silly audit }
+35 http cache fsevents@https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz 1ms (cache hit)
+36 http cache playwright-core@https://registry.npmjs.org/playwright-core/-/playwright-core-1.56.0.tgz 0ms (cache hit)
+37 http cache playwright@https://registry.npmjs.org/playwright/-/playwright-1.56.0.tgz 0ms (cache hit)
+38 silly tarball no local data for fsevents@https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz. Extracting by manifest.
+39 silly tarball no local data for playwright-core@https://registry.npmjs.org/playwright-core/-/playwright-core-1.56.0.tgz. Extracting by manifest.
+40 silly tarball no local data for playwright@https://registry.npmjs.org/playwright/-/playwright-1.56.0.tgz. Extracting by manifest.
+41 http fetch GET 200 https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz 80ms (cache miss)
+42 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 255ms
+43 silly audit report {}
+44 http fetch GET 200 https://registry.npmjs.org/playwright/-/playwright-1.56.0.tgz 738ms (cache miss)
+45 http fetch GET 200 https://registry.npmjs.org/playwright-core/-/playwright-core-1.56.0.tgz 1392ms (cache miss)
+46 info run fsevents@2.3.2 install node_modules/fsevents node-gyp rebuild
+47 info run fsevents@2.3.2 install { code: 1, signal: null }
+48 verbose reify failed optional dependency /Users/misssaki/Documents/projects/playwrights/cove_tests/.npm-cache/_npx/705bc6b22212b352/node_modules/fsevents
+49 silly reify mark deleted [
+49 silly reify   '/Users/misssaki/Documents/projects/playwrights/cove_tests/.npm-cache/_npx/705bc6b22212b352/node_modules/fsevents'
+49 silly reify ]
+50 verbose cwd /Users/misssaki/Documents/projects/playwrights/cove_tests
+51 verbose os Darwin 23.3.0
+52 verbose node v22.17.0
+53 verbose npm  v10.9.2
+54 notice
+54 notice New major version of npm available! 10.9.2 -> 11.6.2
+54 notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.2
+54 notice To update run: npm install -g npm@11.6.2
+54 notice  { force: true, [Symbol(proc-log.meta)]: true }
+55 verbose exit 1
+56 verbose code 1

@@ -1,0 +1,63 @@
+name: Playwright Tests with Allure
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 🧭 1. Checkout repo
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ⚙️ 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 📦 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 🧱 4. Install Playwright browsers
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      # 🧪 5. Run Playwright tests (headed mode, using your Allure reporter)
+      - name: Run Playwright tests with Allure (headed)
+        run: |
+          xvfb-run --auto-servernum --server-args='-screen 0 1920x1080x24' \
+          npm run test:auth --headed
+
+      # 📊 6. Generate Allure Report
+      - name: Generate Allure Report
+        run: npm run allure:generate
+
+      # 📤 7. Upload Allure Report as artifact
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+
+      # 🧷 8. Upload test results (screenshots, videos)
+      - name: Upload Playwright Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-artifacts
+          path: test-results/
+
+      # 🌐 9. Deploy Allure Report to GitHub Pages (optional)
+      - name: Deploy Allure Report to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-report
