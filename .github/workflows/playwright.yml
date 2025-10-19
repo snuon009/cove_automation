@@ -29,32 +29,44 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      # 🧪 5. Run Playwright tests (headed mode, using your Allure reporter)
-      - name: Run Playwright tests with Allure (headed)
+      # 🧪 5. Run Playwright tests (headed mode, with Allure reporter)
+      - name: Run Playwright tests with Allure
         run: |
           xvfb-run --auto-servernum --server-args='-screen 0 1920x1080x24' \
           npm run test:auth -- --headed
 
-      # 📊 6. Generate Allure Report
+      # 🔍 6. Debug — check if results folder exists
+      - name: Check test-results folder
+        run: |
+          if [ -d test-results ]; then
+            echo "✅ test-results folder found:"
+            ls -la test-results
+          else
+            echo "⚠️ test-results folder not found!"
+          fi
+
+      # 📊 7. Generate Allure Report
       - name: Generate Allure Report
         run: npm run allure:generate
 
-      # 📤 7. Upload Allure Report as artifact
+      # 📤 8. Upload Allure Report as artifact
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: allure-report
+          if-no-files-found: warn  # Prevent workflow failure if empty
 
-      # 🧷 8. Upload test results (screenshots, videos)
+      # 🧷 9. Upload Playwright test results (screenshots, videos, raw allure)
       - name: Upload Playwright Artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-artifacts
+          name: test-results
           path: test-results/
+          if-no-files-found: warn  # Avoids "No files found" error
 
-      # 🌐 9. Deploy Allure Report to GitHub Pages (optional)
+      # 🌐 10. Deploy Allure Report to GitHub Pages (optional)
       - name: Deploy Allure Report to GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
