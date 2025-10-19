@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "__Host-next-auth.csrf-token",
-      "value": "fa723a1417d20c8efc5f18037349fd3f00b5e51f50982d614d8708843b8f1314%7C4431721b55eff485e88369c250a2a3ba80b992d56adc942cbb1d43feece7a602",
+      "value": "52e9d497b13c5a11f4004b6cfdb2e6c4ddb51a19b538b5cecd74c5e7e27ec9b9%7Cea41bfc1375e5e9a9985f8e5d81ff62a398e2d42fe0e5824304dcdf692927e17",
       "domain": "cove-passes.vercel.app",
       "path": "/",
       "expires": -1,
@@ -22,10 +22,10 @@
     },
     {
       "name": "token",
-      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjksImlhdCI6MTc2MDg2NjgwMSwiZXhwIjoxNzYzNDU4ODAxfQ.HQPjuWd2nCbMDPRkQXw6Ot0nsudgbRBoBw81ntezDO8",
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjksImlhdCI6MTc2MDg3NTYzMywiZXhwIjoxNzYzNDY3NjMzfQ.uKisoyuIXyVqGC2PlCe7hQXLurADq_MQgqMY2O05hOA",
       "domain": "cove-passes.vercel.app",
       "path": "/",
-      "expires": 1763545201.829788,
+      "expires": 1763554034.196553,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -37,7 +37,7 @@
       "localStorage": [
         {
           "name": "nextauth.message",
-          "value": "{\"event\":\"session\",\"data\":{\"trigger\":\"getSession\"},\"timestamp\":1760866800}"
+          "value": "{\"event\":\"session\",\"data\":{\"trigger\":\"getSession\"},\"timestamp\":1760875632}"
         }
       ]
     }
